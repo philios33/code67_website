@@ -102,6 +102,8 @@ export default function() {
                 <li>Express</li>
                 <li>Promises/Async</li>
                 <li>Node Streams</li>
+                <li>PDF Generation</li>
+                <li>Data Processing</li>
                 <li>HTTP</li>
                 <li>SMTP</li>
                 <li>FTP</li>
