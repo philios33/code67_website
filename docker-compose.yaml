@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  code67:
+    build: .
+    volumes:
+      - type: bind
+        source: ./.env
+        target: /home/node/.env
+    restart: always
+    networks:
+      - master
+networks:
+  master:
+    name: master
+
+  
