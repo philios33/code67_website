@@ -30,7 +30,7 @@ const sendmailOptions: SMTPConnection.Options = {
 }
 const transporter = nodemailer.createTransport(sendmailOptions);
 
-const sendFrom = "cv-website@mariphil.wedding";
+const sendFrom = "phil@mariphil.wedding";
 const sendTo = "phil@code67.com";
 
 const sleep = (ms: number) => {
