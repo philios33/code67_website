@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import NoPage from './components/NoPage';
 import Contact from './components/Contact';
 import { useEffect } from 'react';
+import ForAgents from "./components/ForAgents";
 
 export default function() {
 
@@ -70,6 +71,7 @@ export default function() {
             <Route path="cv" element={<CV />} />
             <Route path="projects" element={<Projects />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="forAgents" element={<ForAgents />} />
             <Route path="*" element={<NoPage />} />
         </Routes>
             

@@ -55,7 +55,7 @@ module.exports = {
   },
   // pass all js files through Babel
   resolve: {
-    extensions: ["*", ".js", ".jsx", ".ts", ".tsx", ".gif", ".png", ".scss"],
+    extensions: [".*", ".js", ".jsx", ".ts", ".tsx", ".gif", ".png", ".scss"],
   },
   // devtool: 'nosources-source-map',
   performance: {
