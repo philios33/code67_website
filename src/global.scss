@@ -45,11 +45,18 @@ h3 {
 	font-size: 16px;
 	text-transform: uppercase;
     color: $default-color;
+    text-decoration: underline;
 }
 .h3 {
     font-size: 16px;
 	text-transform: uppercase;
     color: $default-color;
+    text-decoration: underline;
+}
+h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $base-color;
 }
 
 
@@ -382,6 +389,11 @@ div.menu_icon.on {
             margin-top: 5px;
         }
     }
+    h3 {
+        margin-top: 0px;
+        text-transform: none;
+        font-weight: normal;
+    }
 }
 
 ul.tech {
@@ -411,12 +423,16 @@ p.title {
 }
 
 
-.techExpertice {
+.techExpertise {
     li {
         display: inline-block;
         padding: 5px;
         border: 1px solid grey;
     }
+}
+
+.techNote {
+    color: $base-color;
 }
 
 h3, .h3 {
@@ -517,6 +533,9 @@ p {
             margin-left: 40px;
             display: inline;
         }
+    }
+    h4 {
+        font-size: 14px;
     }
 
     #main { 
