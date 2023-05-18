@@ -2,29 +2,48 @@ import { Link } from "react-router-dom";
 import EmploymentHistoryItem from "./EmploymentHistoryItem";
 import ProjectsBox from "./ProjectsBox";
 import { Project } from "./Project";
+import { MouseEvent, useRef, useState } from "react";
+import { scrollTo } from "../utils/scrollTo";
 
 
 export default function() {
+
+    const [showingMoreSkills, setShowingMoreSkills] = useState(false);
+    
+    const toggleMoreSkills = (e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setShowingMoreSkills(!showingMoreSkills);
+    }
+
+    const scrollToId = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>, id: string) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollTo(id);
+    }
+
     return <div id="content">
         <div id="left_menu">
             <ul>
-                <li>
+                <li onClick={(e) => scrollToId(e, "PersonalStatement")}>
                     <Link to="#PersonalStatement">Personal Statement</Link>
                 </li>
-                <li>
+                <li onClick={(e) => scrollToId(e, "TechnicalStack")}>
                     <Link to="#TechnicalStack">Technical Stack</Link>
                 </li>
-                <li>
+                <li onClick={(e) => scrollToId(e, "EmploymentHistory")}>
                     <Link to="#EmploymentHistory">Employment History</Link>
                 </li>
-                <li>
+                <li onClick={(e) => scrollToId(e, "CommercialProjects")}>
+                    <Link to="#CommercialProjects">Commercial Experience</Link>
+                </li>
+                <li onClick={(e) => scrollToId(e, "Education")}>
                     <Link to="#Education">Education</Link>
                 </li>
                 <li>
-                    <Link to="#TechnicalExpertise">Other</Link>
+                    <Link to="/projects">Side Projects</Link>
                 </li>
-                
-                
+
             </ul>
         </div>
         <div id="right_content">
@@ -42,29 +61,145 @@ export default function() {
                 I also have interests in scalable architecture and event based systems.  I enjoy football and poker.
             </p>
 
+            <p>Please review <a target="_blank" href="https://github.com/philios33">my personal github</a>.</p>
+
             
 
-            <h2 id="TechnicalStack">Current Technical Stack</h2>
+            <h2 id="TechnicalStack">Technical Skills</h2>
 
-            <p>
-                As a programmer, I have used many languages throughout my career.  However, I do have a preferred stack of languages and tech that I like to use over others.
-                This is NOT an exhaustive list of what I have experience using.  The tools I use depend on the job I am doing, and these are subject to change.
-            </p>
-
-            <ul className="tech">
-                <li><span>Main application language</span>Node.js &amp; TypeScript</li>
-                <li><span>Frontend framework</span>React.js</li>
-                <li><span>Persistent database</span>MongoDB</li>
-                <li><span>Key-Value memory cache</span>Redis</li>
-                <li><span>Containerisation</span>Docker</li>
-                <li><span>Continuous Integration Pipelines</span>GitHub Actions</li>
-                <li><span>Production environment</span>Kubernetes</li>
-                <li><span>Cloud platform</span>Google</li>
-
-                <li><span>Backend framework</span>No specific / custom</li>
-                <li><span>ORM / Database Layer</span>No specific / custom</li>
+            <ul className="tech first">
+                <li><span>Main Tech</span>
+                    <ul className="mainTech">
+                        <li>Node.js</li>
+                        <li>Typescript</li>
+                        <li>React.js</li>
+                        <li>MongoDB</li>
+                        <li>Redis</li>
+                        <li>Docker</li>
+                        <li>Express, Middlewares</li>
+                        <li>Webpack</li>
+                        <li>Kubernetes</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Git</li>
+                        <li>Linux/Shell</li>
+                        <li className="showMore">
+                            <a href="#seeMoreSkills" onClick={(e) => toggleMoreSkills(e)}>{showingMoreSkills ? "Show less" : "Show more"}</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><span>Key Skills</span>
+                    <ul className="mainTech">
+                        <li>Excellent Communication</li>
+                        <li>Agile methodology</li>
+                        <li>Scrum/Sprints</li>
+                        <li>Understanding Technical Requirements</li>
+                        <li>Problem solving</li>
+                        <li>Solution design</li>
+                        <li>Analysis of data</li>
+                        <li>Database design</li>
+                        <li>Hitting the ground running</li>
+                        <li>Seeing the big picture</li>
+                    </ul>
+                </li>
             </ul>
-            
+            <br/>
+            {showingMoreSkills && (
+
+            <ul id="seeMoreSkills" className="tech second">
+                <li><span>DevOps</span>
+                    <ul>
+                        <li>CI Pipelines</li>
+                        <li>GitHub Actions</li>
+                        <li>Bash scripting</li>
+                        <li>Grunt</li>
+                    </ul>
+                </li>
+                <li><span>Frameworks</span>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Next.js</li>
+                        <li>Vue.js</li>
+                        <li>Handlebars</li>
+                    </ul>
+                </li>
+                <li><span>Cloud</span>
+                    <ul>
+                        <li>Google (GCP)</li>
+                        <li>Amazon (AWS)</li>
+                        <li>Microsoft (Azure)</li>
+                        <li>Cloud native hosting</li>
+                        <li>Containerized hosting</li>
+                        <li>Unmanaged hosting</li>
+                    </ul>
+                </li>
+                <li><span>Kubernetes</span>
+                    <ul>
+                        <li>CertManager</li>
+                        <li>Sealed Secrets</li>
+                        <li>Helm</li>
+                        <li>Nginx ingress</li>
+                        <li>kubectl CLI</li>
+                    </ul>
+                </li>
+                <li><span>Concepts</span>
+                    <ul>
+                        <li>Progressive Web Apps (PWA)</li>
+                        <li>Authentication</li>
+                        <li>Authorization</li>
+                        <li>Microservices</li>
+                        <li>REST APIs</li>
+                        <li>GraphQL APIs</li>
+                        <li>GraphQL Federation</li>
+                        <li>Encryption/Decryption</li>
+                        <li>Public Key Cryptography</li>
+                        <li>Access Control</li>
+                        <li>Digital Signatures</li>
+                        <li>Timezones</li>
+                        <li>Promises/Async</li>
+                        <li>ES5 vs ES6</li>
+                        <li>OSI model</li>
+                        <li>Stateless design</li>
+                        <li>Event sourcing</li>
+                        <li>Transpiling, Babel</li>
+                        <li>Package management</li>
+                        <li>Image/Artifact registry</li>
+                    </ul>
+                </li>
+                <li><span>Protocols & Formats</span>
+                    <ul>
+                        <li>ACME / Let's Encrypt</li>
+                        <li>IDP / SP / SAML</li>
+                        <li>HTML, JS, CSS</li>
+                        <li>Web 2.0, Responsive Design</li>
+                        <li>HTML 5</li>
+                        <li>SASS/SCSS</li>
+                        <li>Oauth 2.0</li>
+                        <li>JSON, YAML, XML</li>
+                        <li>HTTP</li>
+                        <li>SMTP</li>
+                        <li>FTP</li>
+                        <li>SSL Equivalents</li>
+                        <li>IBM MQ</li>
+                    </ul>
+                </li>
+                <li><span>Other Tech</span>
+                    <ul>
+                        <li>JSON Web Tokens</li>
+                        <li>PDF Generation</li>
+                        <li>Node Streams</li>
+                        <li>Image resizing</li>
+                        <li>File/Data processing</li>
+                        <li>UI/UX Design</li>
+                        <li>RabbitMQ</li>
+                        <li>Web Sockets</li>
+                        <li>Auth Zero</li>
+                        <li>Sendgrid / Mailchimp</li>
+                        <li>Apollo</li>
+                    </ul>
+                </li>
+            </ul>
+            )}
 
             <h2 id="EmploymentHistory">Employment History</h2>
 
@@ -79,7 +214,30 @@ export default function() {
                     <li>Automatic X.509 SSL certificates with <span className="techNote">CertManager</span> on Kubernetes cluster, setup using <span className="techNote">helm charts</span>.</li>
                     <li><span className="techNote">Github Actions CI/Pipelines</span> to automate <span className="techNote">DevOps</span>.</li>
                 </ul>
-                The following are details of some digital projects that me and my team have completed for our clients.
+                <a href="#CommercialProjects">More details</a>
+            </EmploymentHistoryItem>
+
+            <EmploymentHistoryItem dates="2013-2016" name="STS - Student Travel Schools AB" title="Web Developer">
+                Worked with their existing system (Roxen) that runs their website.  Technology of the times were, responsive design, web 2.0 and introducing NoSQL.
+            </EmploymentHistoryItem>
+
+            <EmploymentHistoryItem dates="2010-2013" name="Self Employed" title="Web Developer">
+                Implemented web software solutions for clients using LAMP stack. (PHP & MySQL)  My main client was working on a Tax/Accountancy solution in PHP with a Maths heavy focus.  
+                <br />
+                The software spoke with HMRC APIs, generated PDF files and automatically added semantic tagging to tax documents for electronic submission to Companies House and HMRC.
+            </EmploymentHistoryItem>
+
+            <EmploymentHistoryItem dates="2006-2010" name="Fusion Advertising & Design Ltd" title="Junior Web Developer">
+                I was trained by a colleague.  We developed web software for Sales & Lettings estate agents using LAMP stack with Postgres.  
+                <br />
+                The role included using Linux terminal for server admin and various bash scripts for manual deployments.
+            </EmploymentHistoryItem>
+
+
+            <h2 id="CommercialProjects">Commercial Experience</h2>
+
+            <div>
+                Brief details about some of the digital projects we have completed recently.
                 <ProjectsBox projects={[
                     <Project projectName="Vehicles Recalls System">
                         <ul>
@@ -91,7 +249,7 @@ export default function() {
                             <li>File received via <span className="techNote">IBM MQ</span> queue using an official Node.js connector <span className="techNote">npm package</span>.</li>
                             <li>DVLA equivalent <span className="techNote">API integration</span> for vehicle data fetching.</li>
                             <li>Some vehicle data services exposed using federated <span className="techNote">GraphQL</span></li>
-                            <li>VIN <span className="techNote">worker processor</span> written as <span className="techNote">stateless and scalable</span> for recoverability and to control throughput levels.</li>
+                            <li>VIN <span className="techNote">worker processor</span> written as <span className="techNote">stateless and scalable</span> for <span className="techNote">asynchronous execution</span>, recoverability and to control throughput levels.</li>
                             <li>Individual sendouts via a print mailing <span className="techNote"> API</span> or electronic mailbox API where supported.</li>
                             <li><span className="techNote">PDF generation</span> of recall notice using <span className="techNote">npm libraries</span>.</li>
                             <li>Sensitive social security number <span className="techNote">encryption &amp; decryption</span> system integration.</li>
@@ -115,6 +273,7 @@ export default function() {
                             <li>Base checklists are made in English and each item must be translated in to a target language for the document to be generated in that language.</li>
                             <li>Tracking changes in base templates and auto sending <span className="techNote">email notifications</span> to translators.</li>
                             <li>Browser <span className="techNote">Web Sockets</span> signal live document changes to avoid the need for row level locking or <span className="techNote">document locking</span> between users.</li>
+                            <li><span className="techNote">PDF Generation</span> using <span className="techNote">Puppeteer</span> &amp; Headless Chrome.</li>
                             <li>Authentication via <span className="techNote">OAuth 2.0</span> SSO (single sign-on) <span className="techNote">identity provider</span>.</li>
                             <li>Local <span className="techNote">timezone</span> used to render dates stored in the database in UTC.</li>
                             <li><span className="techNote">JWT</span>s used to assert login claims to the backend.</li>
@@ -133,26 +292,7 @@ export default function() {
                     </Project>
 
                 ]} />
-            </EmploymentHistoryItem>
-
-            <EmploymentHistoryItem dates="2013-2016" name="STS - Student Travel Schools AB" title="Web Developer">
-                Worked with their existing system (Roxen) that runs their website.  Technology of the times were, responsive design, web 2.0 and introducing NoSQL.
-            </EmploymentHistoryItem>
-
-            <EmploymentHistoryItem dates="2010-2013" name="Self Employed" title="Web Developer">
-                Implemented web software solutions for clients using LAMP stack. (PHP & MySQL)  My main client was working on a Tax/Accountancy solution in PHP with a Maths heavy focus.  
-                <br />
-                The software spoke with HMRC APIs, generated PDF files and automatically added semantic tagging to tax documents for electronic submission to Companies House and HMRC.
-            </EmploymentHistoryItem>
-
-            <EmploymentHistoryItem dates="2006-2010" name="Fusion Advertising & Design Ltd" title="Junior Web Developer">
-                I was trained by a colleague.  We developed web software for Sales & Lettings estate agents using LAMP stack with Postgres.  
-                <br />
-                The role included using Linux terminal for server admin and various bash scripts for manual deployments.
-            </EmploymentHistoryItem>
-
-
-            
+            </div>
 
 
             <h2 id="Education">Education</h2>
@@ -166,57 +306,9 @@ export default function() {
             </div>
 
 
-
-
-            
-
-            <h2 id="TechnicalExpertise">Other Technical Expertise</h2>
-
-            <ul className="techExpertise">
-                <li>HTML</li>
-                <li>JS</li>
-                <li>ES5/ES6</li>
-                <li>Typescript</li>
-                <li>CSS</li>
-                <li>SASS/SCSS</li>
-                <li>Grunt</li>
-                <li>Webpack</li>
-                <li>Express</li>
-                <li>Promises/Async</li>
-                <li>Node Streams</li>
-                <li>PDF Generation</li>
-                <li>Data Processing</li>
-                <li>HTTP</li>
-                <li>SMTP</li>
-                <li>FTP</li>
-                <li>REST</li>
-                <li>GraphQL</li>
-                <li>JSON</li>
-                <li>YAML</li>
-                <li>JWT</li>
-                <li>XML</li>
-                <li>XSL</li>
-                <li>JSX/TSX</li>
-                <li>React.js Class components</li>
-                <li>React.js Functional components</li>
-                <li>Git</li>
-                <li>CI-Pipelines</li>
-                <li>Linux/Shell</li>
-                <li>Cloud Computing (GCP, AWS, Azure)</li>
-            </ul>
-
-            <h2 id="TechnicalInterests">Technical Interests</h2>
-
-            <ul>
-                <li>Stateless and scalable design</li>
-                <li>Event driven architecture</li>
-                <li>Public key cryptography</li>
-                <li>Let's encrypt</li>
-            </ul>
-
             <h2>Side Projects</h2>
 
-            <p>Please review <a href="/projects">my side projects.</a></p>
+            <p>Please review <Link to="/projects">my side projects.</Link></p>
 
         </div>
     </div>
