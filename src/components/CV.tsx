@@ -51,19 +51,17 @@ export default function() {
 
             <h2 id="PersonalStatement">Personal Statement</h2>
             <p>
-                I'm Phil, a Lead Web Developer currently residing in Reading and working remotely.  
-                I have over 15 years of commercial experience in the world of web development.  
-                Technology has changed a lot and I pride myself on keeping up to date with new and exciting tech.  
-                My aim is to build useful web based software solutions that solve real world problems.  
-                I have a full spectrum of experience across the full stack of Frontend, Backend and Devops, as well as all parts of the software lifecycle.  
-                Although I am primarily a developer (working mostly in Node.js &amp; Typescript), I like to visualise the end product and how it will solve the problem, so I have a real passion for systems design.  
-                I work well in a team and have excellent communication skills, but can also take responsibility on my own if necessary.  
-                I also have interests in scalable architecture and event based systems.  I enjoy football and poker.
+                I'm Phil, a Lead Web Developer currently residing in Reading and working remotely. 
+                I have over 15 years of commercial experience in the world of web development. 
+                Technology has changed a lot and I pride myself on keeping up to date with new and exciting tech. 
+                My aim is to build useful web-based software solutions that solve real world problems. 
+                I have a full spectrum of experience across the full stack of Frontend, Backend and DevOps, as well as all parts of the software lifecycle. 
+                Although I am primarily a developer (working mostly in Node.js &amp; Typescript), I like to visualise the end-product and how it will solve the problem, so I have a real passion for systems design. 
+                I work well in a team and have excellent communication skills but can also take responsibility on my own if necessary. 
+                I also have interests in scalable architecture and event-based systems. I enjoy football and poker.
             </p>
 
-            <p>Please review <a target="_blank" href="https://github.com/philios33">my personal github</a>.</p>
-
-            
+            <p>Please continue reading below for my professional experience.  You can also view <Link to="/projects">my side projects</Link>, and the code for them on <a target="_blank" href="https://github.com/philios33">my personal github</a>.</p>
 
             <h2 id="TechnicalStack">Technical Skills</h2>
 
@@ -76,11 +74,11 @@ export default function() {
                         <li>MongoDB</li>
                         <li>Redis</li>
                         <li>Docker</li>
-                        <li>Express, Middlewares</li>
+                        <li>Express, Middleware</li>
                         <li>Webpack</li>
                         <li>Kubernetes</li>
                         <li>Google Cloud Platform</li>
-                        <li>Git</li>
+                        <li>Git, GitHub Actions</li>
                         <li>Linux/Shell</li>
                         <li className="showMore">
                             <a href="#seeMoreSkills" onClick={(e) => toggleMoreSkills(e)}>{showingMoreSkills ? "Show less" : "Show more"}</a>
@@ -203,33 +201,30 @@ export default function() {
 
             <h2 id="EmploymentHistory">Employment History</h2>
 
-            <EmploymentHistoryItem dates="2016-Now" name="Forsman & Bodenfors Inhouse AB" title="Lead Web Developer">
-                Worked on a range of exciting projects at this digital agency. My stack shifted over to Node.js and using build scripts.  
-                I became Lead Web Developer in 2021 and have been responsible for putting in place the mechanisms &amp; processes that maximise the productivity of the digital team today.  Such as:
-                <ul>
-                    <li>Separate frontend & backend <span className="techNote">github repositories</span>.</li>
-                    <li>All <span className="techNote">microservices</span> containerized with <span className="techNote">docker</span>.</li>
-                    <li>Hosting on <span className="techNote">GCP, AWS and Azure</span> depending on the client.</li>
-                    <li><span className="techNote">Kubernetes</span> hosting or <span className="techNote">Cloud native PaaS</span> (Platform as a service) equivalent.</li>
-                    <li>Automatic X.509 SSL certificates with <span className="techNote">CertManager</span> on Kubernetes cluster, setup using <span className="techNote">helm charts</span>.</li>
-                    <li><span className="techNote">Github Actions CI/Pipelines</span> to automate <span className="techNote">DevOps</span>.</li>
-                </ul>
+            <EmploymentHistoryItem dates="April 2016 - Now" name="Forsman & Bodenfors Inhouse AB" title="Lead Web Developer">
+                Worked on a range of exciting projects at this digital agency for 7 years.  
+                Most of the above skills I have learnt and applied in this role.  
+                I became Lead Web Developer in 2021 and have been responsible for putting in place the mechanisms &amp; processes that maximise the productivity of the digital team today.  
+                Today my workload is split between mentoring, systems design & systems development.
+                <br />
                 <a href="#CommercialProjects">More details</a>
             </EmploymentHistoryItem>
 
-            <EmploymentHistoryItem dates="2013-2016" name="STS - Student Travel Schools AB" title="Web Developer">
-                Worked with their existing system (Roxen) that runs their website.  Technology of the times were, responsive design, web 2.0 and introducing NoSQL.
+            <EmploymentHistoryItem dates="2013 - April 2016" name="STS - Student Travel Schools AB" title="Web Developer">
+                My main role was to extend the existing Web CMS solution with useful web-based features which the marketing team could utilise.  
+                We focussed on responsive design, user experience and web 2.0.  
+                I also developed a PHP/MySQL system from the ground up to calculate complex package deals for one of the products.
             </EmploymentHistoryItem>
 
-            <EmploymentHistoryItem dates="2010-2013" name="Self Employed" title="Web Developer">
-                Implemented web software solutions for clients using LAMP stack. (PHP & MySQL)  My main client was working on a Tax/Accountancy solution in PHP with a Maths heavy focus.  
-                <br />
+            <EmploymentHistoryItem dates="2010 - 2013" name="Self Employed" title="Web Developer">
+                Implemented web software solutions for clients using LAMP stack (PHP & MySQL).
+                My main client was working on a Tax/Accountancy solution in PHP with a Maths heavy focus.
                 The software spoke with HMRC APIs, generated PDF files and automatically added semantic tagging to tax documents for electronic submission to Companies House and HMRC.
             </EmploymentHistoryItem>
 
-            <EmploymentHistoryItem dates="2006-2010" name="Fusion Advertising & Design Ltd" title="Junior Web Developer">
-                I was trained by a colleague.  We developed web software for Sales & Lettings estate agents using LAMP stack with Postgres.  
-                <br />
+            <EmploymentHistoryItem dates="2006 - 2010" name="Fusion Advertising & Design Ltd" title="Junior Web Developer">
+                I was trained by a colleague.  
+                We developed web software for Sales & Lettings estate agents using LAMP stack with Postgres.  
                 The role included using Linux terminal for server admin and various bash scripts for manual deployments.
             </EmploymentHistoryItem>
 
