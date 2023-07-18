@@ -89,14 +89,13 @@ export default function() {
                 <li><span>Key Skills</span>
                     <ul className="mainTech">
                         <li>Excellent Communication</li>
-                        <li>Agile methodology</li>
-                        <li>Scrum/Sprints</li>
                         <li>Understanding Technical Requirements</li>
                         <li>Problem solving</li>
                         <li>Solution design</li>
                         <li>Analysis of data</li>
                         <li>Database design</li>
                         <li>Hitting the ground running</li>
+                        <li>Time management</li>
                         <li>Seeing the big picture</li>
                     </ul>
                 </li>
