@@ -51,7 +51,7 @@ export default function() {
 
             <h2 id="PersonalStatement">Personal Statement</h2>
             <p>
-                I'm Phil, a Lead Web Developer currently residing in Reading and working remotely. 
+                I'm Phil, a Senior Full-Stack Web Developer currently residing in Reading and working remotely. 
                 I have over 15 years of commercial experience in the world of web development. 
                 Technology has changed a lot and I pride myself on keeping up to date with new and exciting tech. 
                 My aim is to build useful web-based software solutions that solve real world problems. 
